@@ -50,7 +50,16 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+let employeeUpdater = () => {
+  employees.forEach((element, index, aray) => {
+    if (element.firstName === 'Theo'){
+      employees.splice(index, 1)
+    } else if (element.firstName === 'Lorie') {
+      element.department = 'HR'
+    }
+  })
+  return employees;
+}
 
 
 
@@ -68,7 +77,27 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+let removeDuplicates = () => 
+{
+  for (i=0; i < workplaceAccidents.length; i++)
+  {
+    for (j=i+1; j < workplaceAccidents.length; j++)
+    {
+      console.log(workplaceAccidents[i],workplaceAccidents[j])
+      console.log(i, j)
+      if (workplaceAccidents[i] === workplaceAccidents[j])
+      {
+        console.log(workplaceAccidents[i],workplaceAccidents[j])
+        workplaceAccidents.splice(j,1)
+        console.log(workplaceAccidents)
+        i=0;
+        j=1
+      }
+    }
+  }
+  console.log(workplaceAccidents);
+  return workplaceAccidents
+}
 
 
 
@@ -97,8 +126,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1]
+var fluffy2ndFriend = cat.catFriends[1].name
 
 
 
@@ -138,7 +167,12 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+let recordCleaner = () => {
+  myCar.accidents.forEach((element, index, array) => {
+    element.atFaultForAccident = false
+  })
+
+}
 
 
 
@@ -157,6 +191,25 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+let looper = () => {
+  let newArray = numsArr.map((element, index, array) => {
+    let holderArray=[]
+    element.map((element, index, array) => {
+      if(element % 2 === 0)
+        {
+          holderArray.push("even")
+        } else 
+        {
+          holderArray.push("odd")
+        }
+        console.log(holderArray)
+    
+    })
+    return holderArray
+  })
+  console.log(newArray)
+  return newArray
+
+}
 
 
